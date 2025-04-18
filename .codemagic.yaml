@@ -1,0 +1,25 @@
+workflows:
+  build-ios:
+    name: Build iOS WebView App
+    instance_type: mac_mini
+    environment:
+      vars:
+        CAPACITOR_PROJECT_PATH: "."
+      xcode: latest
+      cocoapods: default
+    scripts:
+      - name: Instalar dependências
+        script: |
+          npm install
+      - name: Build frontend (HTML)
+        script: |
+          echo "Nada para compilar, HTML puro"
+      - name: Sincronizar Capacitor
+        script: |
+          npx cap sync ios
+      - name: Build iOS com Xcode
+        script: |
+          cd ios
+          xcodebuild -workspace App.xcworkspace -scheme App -configuration Release -destination generic/platform=iOS
+    artifacts:
+      - build/ios/ipa/*.ipa
