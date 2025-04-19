@@ -1,5 +1,7 @@
 {
-  "appId": "com.example.app",
-  "appName": "meuappcapacitor",
-  "webDir": "www"
+  "appId": "com.andersonjosevital.appipad",
+  "appName": "appipad",
+  "webDir": "public",
+  "bundledWebRuntime": false
 }
+
