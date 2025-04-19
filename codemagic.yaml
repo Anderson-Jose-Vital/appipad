@@ -16,6 +16,7 @@ workflows:
           echo "Nada para compilar, HTML puro"
       - name: Sincronizar Capacitor
         script: |
+          chmod +x ./node_modules/.bin/cap
           npx cap sync ios
       - name: Build iOS com Xcode
         script: |
